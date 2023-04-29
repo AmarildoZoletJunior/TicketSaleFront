@@ -1,0 +1,70 @@
+$background-color_1: whitesmoke;
+
+@keyframes mess {
+	0% {
+		opacity: 0%;
+	}
+	25% {
+		opacity: 25%;
+	}
+	50% {
+		opacity: 50%;
+	}
+	100% {
+		opacity: 100%;
+	}
+}
+.message {
+	animation: mess .4s ease;
+	box-shadow: 3px 5px .5em grey;
+	position: fixed;
+	top: 3em;
+	width: 50%;
+	margin-left: 50%;
+	left: -25%;
+	z-index: 15;
+	flex-wrap: wrap;
+	background-color: $background-color_1;
+	border-radius: 10px;
+	padding: 1.5em;
+	display: flex;
+	flex-direction: column;
+	p {
+		font-size: 1.2em;
+	}
+}
+.message-header {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 1em;
+	flex-wrap: wrap;
+	button {
+		padding: 0.5em;
+		cursor: pointer;
+		border: none;
+	}
+}
+.clear {
+	img {
+		width: 45px;
+	}
+	
+}
+@media screen and (max-width:1024px) {
+	.message{
+	  width: 50%;
+	  height: 40%;
+	  background-color: red;
+	}
+	.message-header{
+		width: 50%;
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap-reverse;
+		button {
+			padding: 0.5em;
+			cursor: pointer;
+			border: none;
+		}
+	}
+  }

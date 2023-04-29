@@ -5,21 +5,29 @@
     <div class="FormHeader">
         <h1>Fazer login</h1>
     </div>
-    <form action="" class="FormBody">
+    <form [formGroup]="meuForm" (submit)="EnviarDados()"  #form="ngForm" class="FormBody">
         <div class="input-group">
             <div class="inputbox">
-                <input required="required" type="text">
+                <input required="required" name="email" formControlName="email" type="text">
                 <span>Email</span>
                 <i></i>
             </div>
+            <div *ngIf="meuForm.get('email')?.invalid && form.submitted" class="validator-error">
+                <div *ngIf="meuForm.get('email')?.errors?.['required']">Campo obrigatório</div>
+                <div *ngIf="meuForm.get('email')?.errors?.['email']">O campo esta inválido</div>
+              </div>
             <div class="inputbox">
-                <input required="required" type="text">
+                <input required="required" name="password" formControlName="password" type="password">
                 <span>Senha</span>
                 <i></i>
             </div>
+            <div *ngIf="meuForm.get('password')?.invalid && form.submitted" class="validator-error">
+                <div *ngIf="meuForm.get('password')?.errors?.['required']">Campo obrigatório</div>
+                <div *ngIf="meuForm.get('password')?.errors?.['invalid']">O campo esta inválido</div>
+              </div>
             <div class="buttonLayer">
-                <a class="link" routerLink="/register"><button>Cadastrar-se</button></a>
-                <button style="background-color: rgb(111, 255, 111);"><a>Login</a></button>
+                <a class="link" routerLink="/register"><button style="font-size: 13px;">Cadastrar-se</button></a>
+                <button type="submit" style="font-size: 20px;background-color: rgb(111, 255, 111);"><a>Login</a></button>
             </div>
         </div>
     </form>

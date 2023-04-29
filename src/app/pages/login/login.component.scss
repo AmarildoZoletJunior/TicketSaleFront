@@ -15,7 +15,7 @@
 
 
     .registerForm {
-        margin-top: 150px;
+        margin-top: 50px;
         width: 30%;
         height: 50%;
         background-color: $primary-background-color;
@@ -91,6 +91,9 @@
                 $color_1: #23242a;
                 $color_2: #8f8f8f;
                 $color_3: #45f3ff;
+                .validator-error{
+                    color: brown;
+                }
 
                 .inputbox {
                     margin: 5px 0;
@@ -167,17 +170,24 @@
     }
 
     @media screen and (max-width:1024px) {
+        :host{
+            width: 50%;
+        }
         .registerForm {
-            width: 90%;
+            width: auto;
             height: auto;
-
             .input-group {
                 flex-direction: row;
-                overflow-y: scroll;
                 flex-wrap: nowrap;
-                max-height: 15rem;
+                max-height: 20rem;
                 padding-right: 5rem;
             }
+        }
+    }
+    @media screen and (min-width:1025px){
+        .registerForm{
+            width: auto;
+            height: auto;
         }
     }
 }

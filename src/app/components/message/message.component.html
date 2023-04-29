@@ -1,0 +1,9 @@
+<div class="message" *ngIf="message.message">
+    <div class="message-header">
+        <h2>Mensagem do sistema</h2>
+        <button class="clear" (click)="message.clear()">
+            <img src="https://cdn-icons-png.flaticon.com/512/95/95068.png" alt="">
+        </button>
+    </div>
+    <p>{{ message.message }}</p>
+</div>
